@@ -211,3 +211,8 @@ html{
     animation: 0.8s tremblement alternate infinite;
     margin-left: -100px;
 }
+audio{
+    width: 0;
+    height: 0;
+    visibility: collapse;
+}

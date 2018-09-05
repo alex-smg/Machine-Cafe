@@ -50,6 +50,14 @@ function expresso(Cafe) {
             iterations: 1
         });
         setTimeout(function(){document.getElementById('expresso').style.display = "block";}, 3000);
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
         document.getElementById('chocolat').style.display = "none";
         document.getElementById('the').style.display = "none";
         document.getElementById('lait').style.display = "none";
@@ -83,6 +91,15 @@ function chocolat() {
         });
 
         document.getElementById('expresso').style.display = "none";
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
+        setTimeout(function(){document.getElementById('player_audio').stop();}, 3000)
         setTimeout(function(){document.getElementById('chocolat').style.display = "block";}, 3000);
         document.getElementById('the').style.display = "none";
         document.getElementById('lait').style.display = "none";
@@ -116,6 +133,15 @@ function the() {
             iterations: 1
         });
         document.getElementById('expresso').style.display = "none";
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
+        setTimeout(function(){document.getElementById('player_audio').stop();}, 3000)
         document.getElementById('chocolat').style.display = "none";
         setTimeout(function(){document.getElementById('the').style.display = "block";}, 3000);
         document.getElementById('lait').style.display = "none";
@@ -147,6 +173,15 @@ function lait() {
             iterations: 1
         });
         document.getElementById('expresso').style.display = "none";
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
+        setTimeout(function(){document.getElementById('player_audio').stop();}, 3000)
         document.getElementById('chocolat').style.display = "none";
         document.getElementById('the').style.display = "none";
         setTimeout(function(){document.getElementById('lait').style.display = "block";}, 3000);
@@ -178,6 +213,15 @@ function long() {
             iterations: 1
         });
         document.getElementById('expresso').style.display = "none";
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
+        setTimeout(function(){document.getElementById('player_audio').stop();}, 3000)
         document.getElementById('chocolat').style.display = "none";
         document.getElementById('the').style.display = "none";
         document.getElementById('lait').style.display = "none";
@@ -209,6 +253,15 @@ function cappuccino() {
             iterations: 1
         });
         document.getElementById('expresso').style.display = "none";
+        player = document.getElementById('player_audio');
+        player2 = document.getElementById('player_audio_2');
+        player.play();
+        setTimeout(function(){document.getElementById('player_audio').pause();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio').load()();}, 3100);
+        setTimeout(function(){document.getElementById('player_audio_2').play();}, 3000);
+        setTimeout(function(){document.getElementById('player_audio_2').load()();}, 3600);
+        setTimeout(function(){document.getElementById('player_audio_2').pause();}, 3500);
+        setTimeout(function(){document.getElementById('player_audio').stop();}, 3000)
         document.getElementById('chocolat').style.display = "none";
         document.getElementById('the').style.display = "none";
         document.getElementById('lait').style.display = "none";
