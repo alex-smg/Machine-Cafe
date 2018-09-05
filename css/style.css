@@ -26,6 +26,13 @@ html{
     100% { transform: skewX(0deg); }  
 }
 */
+#admin{
+    position: absolute;
+    width: 10%;
+    margin-top: 40%;
+    margin-left: 80%;
+}
+
 .bar {
     margin-left: 5px;
     width: 250px;
