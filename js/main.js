@@ -1,156 +1,222 @@
 Cle_admin = false;
 
-var type_boisson= {
+var type_boisson = {
     Cafe_Expresso: '0.70',
     Cafe_Long: '0,70',
     Chocolat_chaud: '0.70',
     The_Vert: '0,60',
     Cappuccino: '0,70',
-    Lait: '0.50',
-        stock:{
-        Cafe: 10,
-        Chocolat: 10,
-        The: 10,
-        Lait: 10,
-        Cappuccino: 10,
-        Sucre: 50,
-        Gobelet: 50,
-        Touillette: 50
-    }
-
+    Lait: '0.50'
+};
+var stock = {
+    Cafe: 20,
+    Chocolat: 10,
+    The: 10,
+    Lait: 10,
+    Cappuccino: 10,
+    Sucre: 50,
+    Gobelet: 50,
+    Touillette: 50
 };
 
-// Sur l'interface maintenance, l'action des différents bouttons permette le control des stocks
-// Par défaut ils devront afficher le nb de gobelets et de touillettes
-// Interface utilisateur, au clic nous appliquons une réduction du nombre de stock, ne doit fonctioné que si raccordé à l'eau
-// Création d'un délai pour chauffer l'eau au moment du trigger
+var water = true;
+var cafe = stock.Cafe;
+var Chocolat = stock.Chocolat;
+var The = stock.The;
+var Lait = stock.Lait;
+var Cappuccino = stock.Cappuccino;
+var Sucre = stock.Sucre;
+var Gobelet = stock.Gobelet;
+var Touillette = stock.Touillette;
 
-function Cle_Admin(){
-    if(Cle_Admin === false){
-        Cle_Admin = !Cle_Admin
-    }else{
-        Cle_Admin = false
+
+function expresso(Cafe) {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
     }
-}
-
-if (raccorde_eau = false){
-    console.log("Non raccordé à l'eau, contacter un techicien");
-}else{
-
-    if (Cle_Admin = true) {
-    // Crée une classe pour les btns
-    var btn=getElementById("Button_1", "Button_2");
-        btn.addEventListener("click", displayStockCafe);
-
-    function displayStockCafe(){
-        console.log(type_boisson.stock.Cafe);
-}
-
-    var btn=getElementById("Button_3");
-        btn.addEventListener("click", displayStockChocolatchaud );
-
-    function displayStockChocolatchaud(){
-        console.log(type_boisson.stock.Chocolat);
-}
-
-    var btn=getElementById("Button_4");
-        btn.addEventListener("click", displayStockTheVert );
-
-    function displayStockTheVert(){
-        console.log(type_boisson.stock.The);
-}
-
-    var btn=getElementById("Button_5");
-        btn.addEventListener("click", displayStockCappuccino );
-
-    function displayStockCappuccino(){
-        console.log(type_boisson.stock.Cappuccino);
-}
-
-    var btn=getElementById("Button_6");
-        btn.addEventListener("click", displayStockLait );
-
-    function displayStockLait(){
-        console.log(type_boisson.stock.Lait);
-}
-
-    var btn=getElementById("Button_7", "Button_8");
-        btn.addEventListener("click", displayStockSucre);
-
-    function displayStockSucre(){
-        console.log(type_boisson.stock.Sucre);
-}
-//Cle_admin = true
-} else {
-    
-}
-}
-
-
-
-
-
-// Partie 2 Js
-
-
-
-var Choix = {
-    // Initialise le Choix
-    initChoix: function (nom, qte) {
-        this.nom = nom;
-        this.qte = qte;
-    },
-    // fonction selectionné
-    selectionner: function () {
-        if (this.sante > 0) {
-            this.qte = this.qte - 1;
-        } else {
-            console.log("il n'y a plus de " + this.nom + ". Nous vous invitons à choisir un autre parfum.");
-        }
+    if (cafe === 0) {
+        alert("Il n'y a plus de café !")
+    } else {
+        stock.Cafe = stock.Cafe - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
+        setTimeout(function(){document.getElementById('expresso').style.display = "block";}, 3000);
+        document.getElementById('chocolat').style.display = "none";
+        document.getElementById('the').style.display = "none";
+        document.getElementById('lait').style.display = "none";
+        document.getElementById('long').style.display = "none";
+        document.getElementById('cappuccino').style.display = "none";
     }
-};
+    console.log(stock.Cafe);
+    console.log(stock.Gobelet);
 
-
-// Envoie une phrase d'intro du parfum choisi
-Choix.etat = function () {
-    var description = "Vous avez choisi " + this.nom + ". et vous allez vous régaler !";
-    return description;
-};
-
-// function $
-function $(selector) {
-    return document.querySelector(selector);
 }
 
+function chocolat() {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
+    }
+    if (cafe === 0) {
+        alert("Il n'y a plus de chocolat !")
+    } else {
 
-var Espresso = Object.create(Choix);
-Espresso.initChoix("Espresso", 10);
+        stock.Chocolat = stock.Chocolat - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
 
-var ChocolatChaud = Object.create(Choix);
-ChocolatChaud.initChoix("Chocolat Chaud", 10);
+        document.getElementById('expresso').style.display = "none";
+        setTimeout(function(){document.getElementById('chocolat').style.display = "block";}, 3000);
+        document.getElementById('the').style.display = "none";
+        document.getElementById('lait').style.display = "none";
+        document.getElementById('long').style.display = "none";
+        document.getElementById('cappuccino').style.display = "none";
 
-var TheVert = Object.create(Choix);
-TheVert.initChoix("Thé Vert", 10);
+    }
+    console.log(stock.Chocolat);
+    console.log(stock.Gobelet);
 
-var Cappuccino = Object.create(Choix);
-Cappuccino.initChoix("Cappuccino", 10);
-
-var Lait = Object.create(Choix);
-Lait.initChoix("Lait", 10);
-
-var Gobelet = Object.create(Choix);
-Gobelet.initChoix("Gobelet", 100);
-
-function useGobelet() {
-    Gobelet.qte = Gobelet.qte - 1;
 }
 
-$('.button1').onclick = function() {
-    var Cafe = Object.create(Choix);
-    Cafe.initChoix("Café", 10);
-    Cafe.etat();
-    Cafe.selectionner();
-    useGobelet();
+function the() {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
+    }
+    if (cafe === 0) {
+        alert("Il n'y a plus de thé !")
+    } else {
+
+        stock.the = stock.the - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
+        document.getElementById('expresso').style.display = "none";
+        document.getElementById('chocolat').style.display = "none";
+        setTimeout(function(){document.getElementById('the').style.display = "block";}, 3000);
+        document.getElementById('lait').style.display = "none";
+        document.getElementById('long').style.display = "none";
+        document.getElementById('cappuccino').style.display = "none";
+    }
+    console.log(stock.Cafe);
+    console.log(stock.Gobelet);
+
+}
+function lait() {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
+    }
+    if (cafe === 0) {
+        alert("Il n'y a plus de lait !")
+    } else {
+
+        stock.Lait = stock.Lait - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
+        document.getElementById('expresso').style.display = "none";
+        document.getElementById('chocolat').style.display = "none";
+        document.getElementById('the').style.display = "none";
+        setTimeout(function(){document.getElementById('lait').style.display = "block";}, 3000);
+        document.getElementById('long').style.display = "none";
+        document.getElementById('cappuccino').style.display = "none";
+    }
+    console.log(stock.lait);
+    console.log(stock.Gobelet);
+
+}
+function long() {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
+    }
+    if (cafe === 0) {
+        alert("Il n'y a plus de café long !")
+    } else {
+
+        stock.Cafe = stock.Cafe - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
+        document.getElementById('expresso').style.display = "none";
+        document.getElementById('chocolat').style.display = "none";
+        document.getElementById('the').style.display = "none";
+        document.getElementById('lait').style.display = "none";
+        setTimeout(function(){document.getElementById('long').style.display = "block";}, 3000);
+        document.getElementById('cappuccino').style.display = "none";
+    }
+    console.log(stock.Cafe);
+    console.log(stock.Gobelet);
+
+}
+function cappuccino() {
+    if (water === false) {
+        alert("Il n'y a plus d'eau !")
+    }
+    if (Cappuccino === 0) {
+        alert("Il n'y a plus de café long !")
+    } else {
+
+        stock.Cappuccino = stock.Cappuccino - 1;
+        stock.Gobelet = stock.Gobelet - 1;
+        stock.Touillette = stock.Touillette - 1;
+        document.getElementById('bar-inside').animate([
+            // keyframes
+            { width: '0px' },
+            { width: '250px' }
+        ], {
+            // timing options
+            duration: 3000,
+            iterations: 1
+        });
+        document.getElementById('expresso').style.display = "none";
+        document.getElementById('chocolat').style.display = "none";
+        document.getElementById('the').style.display = "none";
+        document.getElementById('lait').style.display = "none";
+        document.getElementById('long').style.display = "none";
+        setTimeout(function(){document.getElementById('cappuccino').style.display = "block";}, 3000);
+    }
+    console.log(stock.Cappuccino);
+    console.log(stock.Gobelet);
+
 }
 
-// ...

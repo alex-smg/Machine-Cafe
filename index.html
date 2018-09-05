@@ -6,13 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Machine à café</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <embed src="cantina.mp3" autostart="true" loop="true" hidden="true">
 </head>
 <body>
     <div class="LCD">
         <p>Bienvenue jeune padawan</p>
         <br>
+
+        <p><br>1. choix de la boisson<br><br>2. paiement<br>
+            <br>3. boisson prête</p>
         <br>
-        <div class="bar">
+        <div id="bar">
+            <div id="bar-inside"></div>
         </div>
     </div>
     <div class="sucre">
@@ -26,24 +32,35 @@
         </div>
     </div>
     <div class="container">
-        <button class="cofee1">
+        <button class="cofee1" onclick="expresso()">
             Café expresso
         </button>
-        <button class="cofee2">
+        <button class="cofee2" onclick="long()" >
             Café long
         </button>
-        <button class="cofee3">
+        <button class="cofee3" onclick="the()">
             Thé vert
         </button>
-        <button class="cofee4">
+        <button class="cofee4" onclick="cappuccino()">
             Cappuccino
         </button>
-        <button class="cofee5">
+        <button class="cofee5" onclick="chocolat()">
             Chocolat chaud
         </button>
-        <button class="cofee6">
+        <button class="cofee6" onclick="lait()">
             Lait
         </button>
     </div>
+<div id="cont-img">
+    <img class="img-tasse" id="expresso" src="img/espressoBlue.png">
+    <img class="img-tasse" id="chocolat" src="img/hot-cocoBlue.png">
+    <img class="img-tasse" id="lait" src="img/milkBlue.png">
+    <img class="img-tasse" id="the" src="img/TeaBlue.png">
+    <img  class="img-tasse"id="long" src="img/CofeeBlue.png">
+    <img  class="img-tasse" id="cappuccino" src="img/CappuccinoBlue.png">
+
+</div>
+
+<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>
