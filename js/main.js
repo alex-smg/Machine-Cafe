@@ -85,3 +85,72 @@ if (raccorde_eau = false){
     
 }
 }
+
+
+
+
+
+// Partie 2 Js
+
+
+
+var Choix = {
+    // Initialise le Choix
+    initChoix: function (nom, qte) {
+        this.nom = nom;
+        this.qte = qte;
+    },
+    // fonction selectionné
+    selectionner: function () {
+        if (this.sante > 0) {
+            this.qte = this.qte - 1;
+        } else {
+            console.log("il n'y a plus de " + this.nom + ". Nous vous invitons à choisir un autre parfum.");
+        }
+    }
+};
+
+
+// Envoie une phrase d'intro du parfum choisi
+Choix.etat = function () {
+    var description = "Vous avez choisi " + this.nom + ". et vous allez vous régaler !";
+    return description;
+};
+
+// function $
+function $(selector) {
+    return document.querySelector(selector);
+}
+
+
+var Espresso = Object.create(Choix);
+Espresso.initChoix("Espresso", 10);
+
+var ChocolatChaud = Object.create(Choix);
+ChocolatChaud.initChoix("Chocolat Chaud", 10);
+
+var TheVert = Object.create(Choix);
+TheVert.initChoix("Thé Vert", 10);
+
+var Cappuccino = Object.create(Choix);
+Cappuccino.initChoix("Cappuccino", 10);
+
+var Lait = Object.create(Choix);
+Lait.initChoix("Lait", 10);
+
+var Gobelet = Object.create(Choix);
+Gobelet.initChoix("Gobelet", 100);
+
+function useGobelet() {
+    Gobelet.qte = Gobelet.qte - 1;
+}
+
+$('.button1').onclick = function() {
+    var Cafe = Object.create(Choix);
+    Cafe.initChoix("Café", 10);
+    Cafe.etat();
+    Cafe.selectionner();
+    useGobelet();
+}
+
+// ...
