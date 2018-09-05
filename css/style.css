@@ -103,13 +103,13 @@ html{
 
 #moins{
     position: absolute;
-    margin-left: 35px;
+    margin-left: 13px;
     margin-top: 13px;
 }
 
 #plus{
     position: absolute;
-    margin-left: -45px;
+    margin-left: 13px;
     margin-top: 13px;
 }
 
