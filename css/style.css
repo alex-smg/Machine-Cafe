@@ -83,8 +83,49 @@ html{
     font-size: 2rem;
 }
 
+.cercles{
+    position: absolute;
+    height: 50px;
+}
+
 #cercle1 {
-    margin-left: 40px;
+    margin-left: 10px;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 50px;
+    background: #ffffff;
+}
+
+#cercle2 {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ffffff;
+}
+
+#cercle3 {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ffffff;
+}
+
+#cercle4 {
+    margin-bottom: 10px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    background: #ffffff;
+}
+
+#cercle5 {
+    display: inline-block;
     width: 60px;
     height: 60px;
     border-radius: 50px;
